@@ -2,8 +2,9 @@ d:\Projetos\C#\Produtividade\Produtividade\bin\Debug\Produtividade.exe.config
 d:\Projetos\C#\Produtividade\Produtividade\bin\Debug\Produtividade.exe
 d:\Projetos\C#\Produtividade\Produtividade\bin\Debug\Produtividade.pdb
 d:\Projetos\C#\Produtividade\Produtividade\obj\Debug\Produtividade.csprojResolveAssemblyReference.cache
-d:\Projetos\C#\Produtividade\Produtividade\obj\Debug\Produtividade.frmPrincipal.resources
 d:\Projetos\C#\Produtividade\Produtividade\obj\Debug\Produtividade.Properties.Resources.resources
 d:\Projetos\C#\Produtividade\Produtividade\obj\Debug\Produtividade.csproj.GenerateResource.Cache
 d:\Projetos\C#\Produtividade\Produtividade\obj\Debug\Produtividade.exe
 d:\Projetos\C#\Produtividade\Produtividade\obj\Debug\Produtividade.pdb
+D:\Projetos\C#\Produtividade\Produtividade\obj\Debug\Produtividade.Forms.frmConfiguracaoEmail.resources
+D:\Projetos\C#\Produtividade\Produtividade\obj\Debug\Produtividade.Forms.frmPrincipal.resources

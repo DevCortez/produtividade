@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Produtividade.Geral;
 
-namespace Produtividade
+namespace Produtividade.Forms
 {
 	public partial class frmPrincipal : Form
 	{
@@ -58,6 +58,12 @@ namespace Produtividade
 			}
 
 			calcularDados();
+		}
+
+		private void emailToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			frmConfiguracaoEmail configurador = new frmConfiguracaoEmail();
+			configurador.Show();
 		}
 	}
 }

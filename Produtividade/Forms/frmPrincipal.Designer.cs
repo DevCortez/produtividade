@@ -1,4 +1,4 @@
-﻿namespace Produtividade
+﻿namespace Produtividade.Forms
 {
 	partial class frmPrincipal
 	{
@@ -36,7 +36,12 @@
 			this.cProdutividade = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.cRetornos = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.dtpDia = new System.Windows.Forms.DateTimePicker();
+			this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+			this.configuraçõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.emailToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.relatórioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			((System.ComponentModel.ISupportInitialize)(this.dtvAtendimentos)).BeginInit();
+			this.menuStrip1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// dtvAtendimentos
@@ -111,6 +116,38 @@
 			this.dtpDia.Size = new System.Drawing.Size(106, 20);
 			this.dtpDia.TabIndex = 1;
 			// 
+			// menuStrip1
+			// 
+			this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.configuraçõesToolStripMenuItem});
+			this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+			this.menuStrip1.Name = "menuStrip1";
+			this.menuStrip1.Size = new System.Drawing.Size(620, 24);
+			this.menuStrip1.TabIndex = 2;
+			this.menuStrip1.Text = "menuStrip1";
+			// 
+			// configuraçõesToolStripMenuItem
+			// 
+			this.configuraçõesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.emailToolStripMenuItem,
+            this.relatórioToolStripMenuItem});
+			this.configuraçõesToolStripMenuItem.Name = "configuraçõesToolStripMenuItem";
+			this.configuraçõesToolStripMenuItem.Size = new System.Drawing.Size(96, 20);
+			this.configuraçõesToolStripMenuItem.Text = "Configurações";
+			// 
+			// emailToolStripMenuItem
+			// 
+			this.emailToolStripMenuItem.Name = "emailToolStripMenuItem";
+			this.emailToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.emailToolStripMenuItem.Text = "E-mail";
+			this.emailToolStripMenuItem.Click += new System.EventHandler(this.emailToolStripMenuItem_Click);
+			// 
+			// relatórioToolStripMenuItem
+			// 
+			this.relatórioToolStripMenuItem.Name = "relatórioToolStripMenuItem";
+			this.relatórioToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.relatórioToolStripMenuItem.Text = "Relatório";
+			// 
 			// frmPrincipal
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -118,12 +155,17 @@
 			this.ClientSize = new System.Drawing.Size(620, 313);
 			this.Controls.Add(this.dtpDia);
 			this.Controls.Add(this.dtvAtendimentos);
+			this.Controls.Add(this.menuStrip1);
+			this.MainMenuStrip = this.menuStrip1;
 			this.MinimumSize = new System.Drawing.Size(636, 200);
 			this.Name = "frmPrincipal";
 			this.Text = "Principal";
 			this.Load += new System.EventHandler(this.frmPrincipal_Load);
 			((System.ComponentModel.ISupportInitialize)(this.dtvAtendimentos)).EndInit();
+			this.menuStrip1.ResumeLayout(false);
+			this.menuStrip1.PerformLayout();
 			this.ResumeLayout(false);
+			this.PerformLayout();
 
 		}
 
@@ -137,6 +179,10 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn cFinalizados;
 		private System.Windows.Forms.DataGridViewTextBoxColumn cProdutividade;
 		private System.Windows.Forms.DataGridViewTextBoxColumn cRetornos;
+		private System.Windows.Forms.MenuStrip menuStrip1;
+		private System.Windows.Forms.ToolStripMenuItem configuraçõesToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem emailToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem relatórioToolStripMenuItem;
 	}
 }
 
