@@ -7,32 +7,57 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Produtividade.Geral;
 
 namespace Produtividade
 {
 	public partial class frmPrincipal : Form
 	{
+		private Analistas analistas = new Analistas();
+		
 		public frmPrincipal()
 		{
 			InitializeComponent();
 		}
 
+		private void calcularDados()
+		{
+			foreach(DataGridViewRow x in dtvAtendimentos.Rows)
+			{
+				try
+				{
+					x.Cells["cProdutividade"].Value = Convert.ToInt32(x.Cells["cFinalizados"].Value.ToString()) + Convert.ToInt32(x.Cells["cOutros"].Value.ToString());
+					x.Cells["cRetornos"].Value = Convert.ToInt32(x.Cells["cNovos"].Value.ToString()) - Convert.ToInt32(x.Cells["cFinalizados"].Value.ToString());
+				} catch {}
+			}				
+		}
+		
 		private void dtvAtendimentos_CellValueChanged(object sender, DataGridViewCellEventArgs e)
 		{
 			if(e.RowIndex == -1)
 				return;
 
+			calcularDados();
+			
 			try
 			{
-				dtvAtendimentos.Rows[e.RowIndex].Cells["cProdutividade"].Value = Convert.ToInt32(dtvAtendimentos.Rows[e.RowIndex].Cells["cFinalizados"].Value.ToString()) + Convert.ToInt32(dtvAtendimentos.Rows[e.RowIndex].Cells["cOutros"].Value.ToString());
+				analistas.setProdutividade(dtvAtendimentos.Rows[e.RowIndex].Cells["cAnalista"].Value.ToString(),
+											dtpDia.Value.ToShortDateString(),
+											dtvAtendimentos.Rows[e.RowIndex].Cells["cNovos"].Value.ToString(),
+											dtvAtendimentos.Rows[e.RowIndex].Cells["cOutros"].Value.ToString(),
+											dtvAtendimentos.Rows[e.RowIndex].Cells["cFinalizados"].Value.ToString());
 			}
-			catch { }
+			catch {}
+		}
 
-			try
+		private void frmPrincipal_Load(object sender, EventArgs e)
+		{
+			foreach (Pessoa x in analistas.getDadosDia(dtpDia.Value.ToShortDateString()))
 			{
-				dtvAtendimentos.Rows[e.RowIndex].Cells["cRetornos"].Value = Convert.ToInt32(dtvAtendimentos.Rows[e.RowIndex].Cells["cNovos"].Value.ToString()) - Convert.ToInt32(dtvAtendimentos.Rows[e.RowIndex].Cells["cFinalizados"].Value.ToString());
+				dtvAtendimentos.Rows.Add(x.nome, x.novos, x.outros, x.finalizados);
 			}
-			catch { }
+
+			calcularDados();
 		}
 	}
 }
