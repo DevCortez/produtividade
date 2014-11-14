@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.IO;
 using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Produtividade.Geral;
+
 using Produtividade.Geral;
 
 namespace Produtividade.Forms
@@ -64,6 +67,11 @@ namespace Produtividade.Forms
 		{
 			frmConfiguracaoEmail configurador = new frmConfiguracaoEmail();
 			configurador.Show();
+		}
+
+		private void enviarPorEmailToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			Relatorio.enviarRelatorio("eduardo.sqa@alterdata.com.br", "Assunto de testes", Relatorio.gerarRelatorio(dtpDia.Value.ToShortDateString(), "eduardo.sqa", analistas));
 		}
 	}
 }

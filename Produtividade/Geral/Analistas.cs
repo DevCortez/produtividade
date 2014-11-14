@@ -86,7 +86,7 @@ namespace Produtividade.Geral
 			return listaNomes;
 		}
 
-		private Pessoa getDadosDiaPessoa(string pessoa, DateTime data)
+		public Pessoa getDadosDiaPessoa(string pessoa, DateTime data)
 		{
 			Pessoa x = new Pessoa();
 
@@ -101,6 +101,37 @@ namespace Produtividade.Geral
 				x.novos = dadosNode.Attribute("novos").Value;
 				x.outros = dadosNode.Attribute("outros").Value;
 				x.finalizados = dadosNode.Attribute("finalizados").Value;
+			}
+			catch
+			{
+				x = null;
+			}
+
+			return x;
+		}
+
+		public Pessoa getDadosMesPessoa(string pessoa, DateTime data)
+		{
+			Pessoa x = new Pessoa();
+
+			try
+			{
+				IEnumerable<XElement> dadosNode = analista.Elements("root").Elements(pessoa).Elements("a" + data.Year.ToString()).Elements("m" + data.Month.ToString());
+
+				if (dadosNode == null)
+					return null;
+
+
+				foreach(XElement currentDia in dadosNode)
+				{
+					x.nome = pessoa;
+
+				
+
+					x.novos = (Convert.ToInt32(x.novos) + Convert.ToInt32((currentDia.FirstNode as XElement).Attribute("novos").Value)).ToString();
+					x.outros = (Convert.ToInt32(x.outros) + Convert.ToInt32((currentDia.FirstNode as XElement).Attribute("outros").Value)).ToString();
+					x.finalizados = (Convert.ToInt32(x.finalizados) + Convert.ToInt32((currentDia.FirstNode as XElement).Attribute("finalizados").Value)).ToString();
+				}
 			}
 			catch
 			{
@@ -126,6 +157,27 @@ namespace Produtividade.Geral
 					}
 				
 				listaPessoas.Add(currentPessoa);								
+			}
+
+			return listaPessoas;
+		}
+
+		public IEnumerable<Pessoa> getDadosMes(string data)
+		{
+			DateTime dia = Convert.ToDateTime(data);
+			List<Pessoa> listaPessoas = new List<Pessoa>();
+
+			foreach (string nomePessoa in getNomes())
+			{
+				Pessoa currentPessoa = getDadosMesPessoa(nomePessoa, dia);
+
+				if (currentPessoa == null)
+				{
+					currentPessoa = new Pessoa();
+					currentPessoa.nome = nomePessoa;
+				}
+
+				listaPessoas.Add(currentPessoa);
 			}
 
 			return listaPessoas;

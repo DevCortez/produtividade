@@ -47,6 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\frmCadastroMeta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmCadastroMeta.Designer.cs">
+      <DependentUpon>frmCadastroMeta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmConfiguracaoEmail.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,8 +66,13 @@
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="Geral\Analistas.cs" />
+    <Compile Include="Geral\Configurador.cs" />
     <Compile Include="Geral\Program.cs" />
+    <Compile Include="Geral\Relatorio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\frmCadastroMeta.resx">
+      <DependentUpon>frmCadastroMeta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmConfiguracaoEmail.resx">
       <DependentUpon>frmConfiguracaoEmail.cs</DependentUpon>
     </EmbeddedResource>

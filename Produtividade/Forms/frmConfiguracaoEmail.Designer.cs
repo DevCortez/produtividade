@@ -119,7 +119,7 @@
 			this.txtPorta.Name = "txtPorta";
 			this.txtPorta.Size = new System.Drawing.Size(49, 20);
 			this.txtPorta.TabIndex = 2;
-			this.txtPorta.Text = "25";
+			this.txtPorta.Text = "587";
 			// 
 			// txtSenha
 			// 

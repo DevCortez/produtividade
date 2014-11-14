@@ -40,6 +40,8 @@
 			this.configuraçõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.emailToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.relatórioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.relatórioToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+			this.enviarPorEmailToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			((System.ComponentModel.ISupportInitialize)(this.dtvAtendimentos)).BeginInit();
 			this.menuStrip1.SuspendLayout();
 			this.SuspendLayout();
@@ -119,7 +121,8 @@
 			// menuStrip1
 			// 
 			this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.configuraçõesToolStripMenuItem});
+            this.configuraçõesToolStripMenuItem,
+            this.relatórioToolStripMenuItem1});
 			this.menuStrip1.Location = new System.Drawing.Point(0, 0);
 			this.menuStrip1.Name = "menuStrip1";
 			this.menuStrip1.Size = new System.Drawing.Size(620, 24);
@@ -133,20 +136,35 @@
             this.relatórioToolStripMenuItem});
 			this.configuraçõesToolStripMenuItem.Name = "configuraçõesToolStripMenuItem";
 			this.configuraçõesToolStripMenuItem.Size = new System.Drawing.Size(96, 20);
-			this.configuraçõesToolStripMenuItem.Text = "Configurações";
+			this.configuraçõesToolStripMenuItem.Text = "&Configurações";
 			// 
 			// emailToolStripMenuItem
 			// 
 			this.emailToolStripMenuItem.Name = "emailToolStripMenuItem";
 			this.emailToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-			this.emailToolStripMenuItem.Text = "E-mail";
+			this.emailToolStripMenuItem.Text = "&E-mail";
 			this.emailToolStripMenuItem.Click += new System.EventHandler(this.emailToolStripMenuItem_Click);
 			// 
 			// relatórioToolStripMenuItem
 			// 
 			this.relatórioToolStripMenuItem.Name = "relatórioToolStripMenuItem";
-			this.relatórioToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-			this.relatórioToolStripMenuItem.Text = "Relatório";
+			this.relatórioToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+			this.relatórioToolStripMenuItem.Text = "&Opções de relatório";
+			// 
+			// relatórioToolStripMenuItem1
+			// 
+			this.relatórioToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.enviarPorEmailToolStripMenuItem});
+			this.relatórioToolStripMenuItem1.Name = "relatórioToolStripMenuItem1";
+			this.relatórioToolStripMenuItem1.Size = new System.Drawing.Size(66, 20);
+			this.relatórioToolStripMenuItem1.Text = "&Relatório";
+			// 
+			// enviarPorEmailToolStripMenuItem
+			// 
+			this.enviarPorEmailToolStripMenuItem.Name = "enviarPorEmailToolStripMenuItem";
+			this.enviarPorEmailToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+			this.enviarPorEmailToolStripMenuItem.Text = "&Enviar por e-mail";
+			this.enviarPorEmailToolStripMenuItem.Click += new System.EventHandler(this.enviarPorEmailToolStripMenuItem_Click);
 			// 
 			// frmPrincipal
 			// 
@@ -183,6 +201,8 @@
 		private System.Windows.Forms.ToolStripMenuItem configuraçõesToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem emailToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem relatórioToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem relatórioToolStripMenuItem1;
+		private System.Windows.Forms.ToolStripMenuItem enviarPorEmailToolStripMenuItem;
 	}
 }
 
