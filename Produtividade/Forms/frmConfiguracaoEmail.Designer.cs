@@ -38,6 +38,8 @@
 			this.lblPorta = new System.Windows.Forms.Label();
 			this.txtPorta = new System.Windows.Forms.TextBox();
 			this.txtSenha = new System.Windows.Forms.TextBox();
+			this.lblSuffix = new System.Windows.Forms.Label();
+			this.txtSuffix = new System.Windows.Forms.TextBox();
 			this.SuspendLayout();
 			// 
 			// txtEmail
@@ -85,10 +87,10 @@
 			// btnOk
 			// 
 			this.btnOk.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-			this.btnOk.Location = new System.Drawing.Point(110, 130);
+			this.btnOk.Location = new System.Drawing.Point(110, 178);
 			this.btnOk.Name = "btnOk";
 			this.btnOk.Size = new System.Drawing.Size(53, 23);
-			this.btnOk.TabIndex = 4;
+			this.btnOk.TabIndex = 5;
 			this.btnOk.Text = "&OK";
 			this.btnOk.UseVisualStyleBackColor = true;
 			this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
@@ -97,10 +99,10 @@
 			// 
 			this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
 			this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-			this.btnCancelar.Location = new System.Drawing.Point(169, 130);
+			this.btnCancelar.Location = new System.Drawing.Point(169, 178);
 			this.btnCancelar.Name = "btnCancelar";
 			this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-			this.btnCancelar.TabIndex = 5;
+			this.btnCancelar.TabIndex = 6;
 			this.btnCancelar.Text = "&Cancelar";
 			this.btnCancelar.UseVisualStyleBackColor = true;
 			this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -130,12 +132,31 @@
 			this.txtSenha.Size = new System.Drawing.Size(173, 20);
 			this.txtSenha.TabIndex = 1;
 			// 
+			// lblSuffix
+			// 
+			this.lblSuffix.AutoSize = true;
+			this.lblSuffix.Location = new System.Drawing.Point(13, 136);
+			this.lblSuffix.Name = "lblSuffix";
+			this.lblSuffix.Size = new System.Drawing.Size(145, 13);
+			this.lblSuffix.TabIndex = 10;
+			this.lblSuffix.Text = "Sufixo do e-mail dos analistas";
+			// 
+			// txtSuffix
+			// 
+			this.txtSuffix.Location = new System.Drawing.Point(16, 152);
+			this.txtSuffix.Name = "txtSuffix";
+			this.txtSuffix.Size = new System.Drawing.Size(228, 20);
+			this.txtSuffix.TabIndex = 4;
+			this.txtSuffix.Text = "@alterdata.com.br";
+			// 
 			// frmConfiguracaoEmail
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.CancelButton = this.btnCancelar;
-			this.ClientSize = new System.Drawing.Size(256, 157);
+			this.ClientSize = new System.Drawing.Size(256, 209);
+			this.Controls.Add(this.lblSuffix);
+			this.Controls.Add(this.txtSuffix);
 			this.Controls.Add(this.txtSenha);
 			this.Controls.Add(this.txtPorta);
 			this.Controls.Add(this.lblPorta);
@@ -168,5 +189,7 @@
 		private System.Windows.Forms.Label lblPorta;
 		private System.Windows.Forms.TextBox txtPorta;
 		private System.Windows.Forms.TextBox txtSenha;
+		private System.Windows.Forms.Label lblSuffix;
+		private System.Windows.Forms.TextBox txtSuffix;
 	}
 }

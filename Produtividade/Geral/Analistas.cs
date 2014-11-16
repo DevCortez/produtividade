@@ -218,15 +218,71 @@ namespace Produtividade.Geral
 
 			int total = 0;
 
-			foreach(XElement x in mesNode.DescendantNodes())
+			foreach (XElement x in mesNode.DescendantNodes())
 			{
-				if(Convert.ToInt32(x.Attribute("novos").Value)>0 ||
-					Convert.ToInt32(x.Attribute("outros").Value)>0 ||
-					Convert.ToInt32(x.Attribute("finalizados").Value)>0 )
+				if (Convert.ToInt32(x.Attribute("novos").Value) > 0 ||
+					Convert.ToInt32(x.Attribute("outros").Value) > 0 ||
+					Convert.ToInt32(x.Attribute("finalizados").Value) > 0)
 					total++;
 			}
 
 			return total;
+		}
+
+		public IEnumerable<DiaTrabalhado> getListaDiasTrabalhados(string nome, DateTime data)
+		{
+			IEnumerable<XElement> mesNode = analista.Elements("root").Elements(nome).Elements("a" + data.Year.ToString()).Elements("m" + data.Month.ToString());
+			List<DiaTrabalhado> listaDias = new List<DiaTrabalhado>();
+
+		
+			foreach (XElement x in mesNode.DescendantNodes())
+			{
+				if (Convert.ToInt32(x.Attribute("novos").Value) > 0 ||
+					Convert.ToInt32(x.Attribute("outros").Value) > 0 ||
+					Convert.ToInt32(x.Attribute("finalizados").Value) > 0)
+					{
+						DiaTrabalhado dia = new DiaTrabalhado();
+						dia.novos = x.Attribute("novos").Value;
+						dia.outros = x.Attribute("outros").Value;
+						dia.finalizados = x.Attribute("finalizados").Value;
+						dia.dia = x.Name.ToString().Substring(1, x.Name.ToString().Length-1);
+						
+						listaDias.Add(dia);
+					}
+			}
+
+			return listaDias;
+		}
+
+		public void setAtivo(string nome, bool ativo)
+		{
+			XElement x = analista.Descendants(nome).FirstOrDefault();
+
+			if (x == null)
+				return;
+
+			XElement pAtivo = x.Element("ativo");
+
+			if (pAtivo == null)
+			{
+				pAtivo = new XElement("ativo");
+				x.Add(pAtivo);
+			}
+
+			pAtivo.Value = ativo.ToString();
+			salvarDados();
+		}
+
+		public bool getAtivo(string nome)
+		{
+			try
+			{
+				return Convert.ToBoolean(analista.Descendants(nome).Elements("ativo").FirstOrDefault().Value.ToString());
+			}
+			catch
+			{
+				return false;
+			}
 		}
 	}
 
@@ -243,5 +299,10 @@ namespace Produtividade.Geral
 			outros = "0";
 			finalizados = "0";
 		}
+	}
+
+	class DiaTrabalhado : Pessoa
+	{
+		public string dia;
 	}
 }

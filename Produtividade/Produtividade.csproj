@@ -59,6 +59,12 @@
     <Compile Include="Forms\frmConfiguracaoEmail.Designer.cs">
       <DependentUpon>frmConfiguracaoEmail.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmGerenciarAtivos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmGerenciarAtivos.Designer.cs">
+      <DependentUpon>frmGerenciarAtivos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +81,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmConfiguracaoEmail.resx">
       <DependentUpon>frmConfiguracaoEmail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmGerenciarAtivos.resx">
+      <DependentUpon>frmGerenciarAtivos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>

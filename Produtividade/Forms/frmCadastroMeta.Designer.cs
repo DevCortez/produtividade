@@ -30,9 +30,9 @@
 		{
 			this.dtvMetas = new System.Windows.Forms.DataGridView();
 			this.btnOk = new System.Windows.Forms.Button();
+			this.button1 = new System.Windows.Forms.Button();
 			this.cAnalista = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.cMeta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.button1 = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.dtvMetas)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -70,19 +70,6 @@
 			this.btnOk.UseVisualStyleBackColor = true;
 			this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
 			// 
-			// cAnalista
-			// 
-			this.cAnalista.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.cAnalista.HeaderText = "Analista";
-			this.cAnalista.Name = "cAnalista";
-			// 
-			// cMeta
-			// 
-			this.cMeta.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-			this.cMeta.HeaderText = "Meta diária";
-			this.cMeta.Name = "cMeta";
-			this.cMeta.Width = 90;
-			// 
 			// button1
 			// 
 			this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -94,6 +81,20 @@
 			this.button1.Text = "&Cancelar";
 			this.button1.UseVisualStyleBackColor = true;
 			this.button1.Click += new System.EventHandler(this.button1_Click);
+			// 
+			// cAnalista
+			// 
+			this.cAnalista.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.cAnalista.HeaderText = "Analista";
+			this.cAnalista.Name = "cAnalista";
+			this.cAnalista.ReadOnly = true;
+			// 
+			// cMeta
+			// 
+			this.cMeta.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+			this.cMeta.HeaderText = "Meta diária";
+			this.cMeta.Name = "cMeta";
+			this.cMeta.Width = 90;
 			// 
 			// frmCadastroMeta
 			// 
@@ -115,9 +116,9 @@
 
 		private System.Windows.Forms.DataGridView dtvMetas;
 		private System.Windows.Forms.Button btnOk;
+		private System.Windows.Forms.Button button1;
 		private System.Windows.Forms.DataGridViewTextBoxColumn cAnalista;
 		private System.Windows.Forms.DataGridViewTextBoxColumn cMeta;
-		private System.Windows.Forms.Button button1;
 
 	}
 }

@@ -32,5 +32,11 @@ namespace Produtividade.Geral
 			XDocument configuracoes = XDocument.Load("config.xml");
 			return configuracoes.Element("configuracao").Element("servidor").Value.ToString();
 		}
+
+		public static string getSuffix()
+		{
+			XDocument configuracoes = XDocument.Load("config.xml");
+			return configuracoes.Element("configuracao").Element("sufixo").Value.ToString();
+		}
 	}
 }

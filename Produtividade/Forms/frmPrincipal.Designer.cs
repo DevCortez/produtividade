@@ -43,6 +43,7 @@
 			this.metasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.relatórioToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
 			this.enviarPorEmailToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.ajudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.pnlLoading = new System.Windows.Forms.Panel();
 			this.lblMensagem = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.dtvAtendimentos)).BeginInit();
@@ -71,15 +72,15 @@
 			this.dtvAtendimentos.Name = "dtvAtendimentos";
 			this.dtvAtendimentos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
 			this.dtvAtendimentos.RowHeadersVisible = false;
-			this.dtvAtendimentos.Size = new System.Drawing.Size(596, 242);
+			this.dtvAtendimentos.Size = new System.Drawing.Size(510, 242);
 			this.dtvAtendimentos.TabIndex = 0;
 			this.dtvAtendimentos.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtvAtendimentos_CellValueChanged);
 			// 
 			// cAnalista
 			// 
+			this.cAnalista.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
 			this.cAnalista.HeaderText = "Analista";
 			this.cAnalista.Name = "cAnalista";
-			this.cAnalista.Width = 180;
 			// 
 			// cNovos
 			// 
@@ -105,31 +106,35 @@
 			this.cProdutividade.HeaderText = "Produtividade";
 			this.cProdutividade.Name = "cProdutividade";
 			this.cProdutividade.ReadOnly = true;
+			this.cProdutividade.Visible = false;
 			// 
 			// cRetornos
 			// 
-			this.cRetornos.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.cRetornos.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
 			this.cRetornos.HeaderText = "Retornos";
 			this.cRetornos.Name = "cRetornos";
 			this.cRetornos.ReadOnly = true;
+			this.cRetornos.Width = 80;
 			// 
 			// dtpDia
 			// 
 			this.dtpDia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.dtpDia.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-			this.dtpDia.Location = new System.Drawing.Point(502, 33);
+			this.dtpDia.Location = new System.Drawing.Point(416, 33);
 			this.dtpDia.Name = "dtpDia";
 			this.dtpDia.Size = new System.Drawing.Size(106, 20);
 			this.dtpDia.TabIndex = 1;
+			this.dtpDia.ValueChanged += new System.EventHandler(this.dtpDia_ValueChanged);
 			// 
 			// menuStrip1
 			// 
 			this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.configuraçõesToolStripMenuItem,
-            this.relatórioToolStripMenuItem1});
+            this.relatórioToolStripMenuItem1,
+            this.ajudaToolStripMenuItem});
 			this.menuStrip1.Location = new System.Drawing.Point(0, 0);
 			this.menuStrip1.Name = "menuStrip1";
-			this.menuStrip1.Size = new System.Drawing.Size(620, 24);
+			this.menuStrip1.Size = new System.Drawing.Size(534, 24);
 			this.menuStrip1.TabIndex = 2;
 			this.menuStrip1.Text = "menuStrip1";
 			// 
@@ -178,6 +183,12 @@
 			this.enviarPorEmailToolStripMenuItem.Text = "&Enviar por e-mail";
 			this.enviarPorEmailToolStripMenuItem.Click += new System.EventHandler(this.enviarPorEmailToolStripMenuItem_Click);
 			// 
+			// ajudaToolStripMenuItem
+			// 
+			this.ajudaToolStripMenuItem.Name = "ajudaToolStripMenuItem";
+			this.ajudaToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
+			this.ajudaToolStripMenuItem.Text = "Ajuda";
+			// 
 			// pnlLoading
 			// 
 			this.pnlLoading.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -190,32 +201,34 @@
 			// 
 			// lblMensagem
 			// 
-			this.lblMensagem.AutoSize = true;
-			this.lblMensagem.Location = new System.Drawing.Point(54, 41);
+			this.lblMensagem.Location = new System.Drawing.Point(3, 0);
 			this.lblMensagem.Name = "lblMensagem";
-			this.lblMensagem.Size = new System.Drawing.Size(93, 13);
+			this.lblMensagem.Size = new System.Drawing.Size(192, 98);
 			this.lblMensagem.TabIndex = 0;
 			this.lblMensagem.Text = "Enviando emails...";
+			this.lblMensagem.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// frmPrincipal
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(620, 313);
+			this.ClientSize = new System.Drawing.Size(534, 313);
 			this.Controls.Add(this.pnlLoading);
 			this.Controls.Add(this.dtpDia);
 			this.Controls.Add(this.dtvAtendimentos);
 			this.Controls.Add(this.menuStrip1);
+			this.KeyPreview = true;
 			this.MainMenuStrip = this.menuStrip1;
-			this.MinimumSize = new System.Drawing.Size(636, 200);
+			this.MinimumSize = new System.Drawing.Size(550, 200);
 			this.Name = "frmPrincipal";
 			this.Text = "Principal";
 			this.Load += new System.EventHandler(this.frmPrincipal_Load);
+			this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmPrincipal_KeyDown);
+			this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.frmPrincipal_KeyPress);
 			((System.ComponentModel.ISupportInitialize)(this.dtvAtendimentos)).EndInit();
 			this.menuStrip1.ResumeLayout(false);
 			this.menuStrip1.PerformLayout();
 			this.pnlLoading.ResumeLayout(false);
-			this.pnlLoading.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -225,12 +238,6 @@
 
 		private System.Windows.Forms.DataGridView dtvAtendimentos;
 		private System.Windows.Forms.DateTimePicker dtpDia;
-		private System.Windows.Forms.DataGridViewTextBoxColumn cAnalista;
-		private System.Windows.Forms.DataGridViewTextBoxColumn cNovos;
-		private System.Windows.Forms.DataGridViewTextBoxColumn cOutros;
-		private System.Windows.Forms.DataGridViewTextBoxColumn cFinalizados;
-		private System.Windows.Forms.DataGridViewTextBoxColumn cProdutividade;
-		private System.Windows.Forms.DataGridViewTextBoxColumn cRetornos;
 		private System.Windows.Forms.MenuStrip menuStrip1;
 		private System.Windows.Forms.ToolStripMenuItem configuraçõesToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem emailToolStripMenuItem;
@@ -240,6 +247,13 @@
 		private System.Windows.Forms.ToolStripMenuItem metasToolStripMenuItem;
 		private System.Windows.Forms.Panel pnlLoading;
 		private System.Windows.Forms.Label lblMensagem;
+		private System.Windows.Forms.DataGridViewTextBoxColumn cAnalista;
+		private System.Windows.Forms.DataGridViewTextBoxColumn cNovos;
+		private System.Windows.Forms.DataGridViewTextBoxColumn cOutros;
+		private System.Windows.Forms.DataGridViewTextBoxColumn cFinalizados;
+		private System.Windows.Forms.DataGridViewTextBoxColumn cProdutividade;
+		private System.Windows.Forms.DataGridViewTextBoxColumn cRetornos;
+		private System.Windows.Forms.ToolStripMenuItem ajudaToolStripMenuItem;
 	}
 }
 

@@ -27,6 +27,7 @@ namespace Produtividade.Forms
 			configuracao.Element("configuracao").Element("servidor").Value = txtServidor.Text;
 			configuracao.Element("configuracao").Element("porta").Value = txtPorta.Text;
 			configuracao.Element("configuracao").Element("senha").Value = txtSenha.Text;
+			configuracao.Element("configuracao").Element("sufixo").Value = txtSuffix.Text;
 			
 			configuracao.Save("config.xml");
 			Close();
@@ -46,6 +47,7 @@ namespace Produtividade.Forms
 				txtServidor.Text = configuracao.Element("configuracao").Element("servidor").Value;
 				txtPorta.Text = configuracao.Element("configuracao").Element("porta").Value;
 				txtSenha.Text = configuracao.Element("configuracao").Element("senha").Value;
+				txtSuffix.Text = configuracao.Element("configuracao").Element("sufixo").Value;
 			}
 			else
 			{
@@ -54,6 +56,7 @@ namespace Produtividade.Forms
 				configuracao.Element("configuracao").Add(new XElement("servidor"));
 				configuracao.Element("configuracao").Add(new XElement("porta"));
 				configuracao.Element("configuracao").Add(new XElement("senha"));
+				configuracao.Element("configuracao").Add(new XElement("sufixo"));
 			}
 		}
 	}
