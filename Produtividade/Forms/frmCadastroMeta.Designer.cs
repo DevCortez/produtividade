@@ -29,17 +29,17 @@
 		private void InitializeComponent()
 		{
 			this.dtvMetas = new System.Windows.Forms.DataGridView();
+			this.btnOk = new System.Windows.Forms.Button();
 			this.cAnalista = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.cNovos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.cOutros = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.cFinalizados = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.cProdutividade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.cRetornos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.cMeta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.button1 = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.dtvMetas)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// dtvMetas
 			// 
+			this.dtvMetas.AllowUserToAddRows = false;
+			this.dtvMetas.AllowUserToDeleteRows = false;
 			this.dtvMetas.AllowUserToOrderColumns = true;
 			this.dtvMetas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
@@ -49,65 +49,63 @@
 			this.dtvMetas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dtvMetas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cAnalista,
-            this.cNovos,
-            this.cOutros,
-            this.cFinalizados,
-            this.cProdutividade,
-            this.cRetornos});
+            this.cMeta});
 			this.dtvMetas.GridColor = System.Drawing.SystemColors.ControlDarkDark;
-			this.dtvMetas.Location = new System.Drawing.Point(21, 28);
+			this.dtvMetas.Location = new System.Drawing.Point(12, 12);
 			this.dtvMetas.Name = "dtvMetas";
 			this.dtvMetas.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
 			this.dtvMetas.RowHeadersVisible = false;
-			this.dtvMetas.Size = new System.Drawing.Size(319, 154);
+			this.dtvMetas.Size = new System.Drawing.Size(298, 128);
 			this.dtvMetas.TabIndex = 1;
+			// 
+			// btnOk
+			// 
+			this.btnOk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.btnOk.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+			this.btnOk.Location = new System.Drawing.Point(187, 146);
+			this.btnOk.Name = "btnOk";
+			this.btnOk.Size = new System.Drawing.Size(53, 23);
+			this.btnOk.TabIndex = 6;
+			this.btnOk.Text = "&OK";
+			this.btnOk.UseVisualStyleBackColor = true;
+			this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
 			// 
 			// cAnalista
 			// 
+			this.cAnalista.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
 			this.cAnalista.HeaderText = "Analista";
 			this.cAnalista.Name = "cAnalista";
-			this.cAnalista.Width = 180;
 			// 
-			// cNovos
+			// cMeta
 			// 
-			this.cNovos.HeaderText = "Novos";
-			this.cNovos.Name = "cNovos";
-			this.cNovos.Width = 80;
+			this.cMeta.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+			this.cMeta.HeaderText = "Meta diária";
+			this.cMeta.Name = "cMeta";
+			this.cMeta.Width = 90;
 			// 
-			// cOutros
+			// button1
 			// 
-			this.cOutros.HeaderText = "Finalizado outros";
-			this.cOutros.Name = "cOutros";
-			this.cOutros.Width = 80;
-			// 
-			// cFinalizados
-			// 
-			this.cFinalizados.HeaderText = "Finalizados";
-			this.cFinalizados.Name = "cFinalizados";
-			this.cFinalizados.Width = 80;
-			// 
-			// cProdutividade
-			// 
-			this.cProdutividade.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.cProdutividade.HeaderText = "Produtividade";
-			this.cProdutividade.Name = "cProdutividade";
-			this.cProdutividade.ReadOnly = true;
-			// 
-			// cRetornos
-			// 
-			this.cRetornos.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.cRetornos.HeaderText = "Retornos";
-			this.cRetornos.Name = "cRetornos";
-			this.cRetornos.ReadOnly = true;
+			this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+			this.button1.Location = new System.Drawing.Point(246, 146);
+			this.button1.Name = "button1";
+			this.button1.Size = new System.Drawing.Size(64, 23);
+			this.button1.TabIndex = 7;
+			this.button1.Text = "&Cancelar";
+			this.button1.UseVisualStyleBackColor = true;
+			this.button1.Click += new System.EventHandler(this.button1_Click);
 			// 
 			// frmCadastroMeta
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(422, 207);
+			this.ClientSize = new System.Drawing.Size(322, 174);
+			this.Controls.Add(this.button1);
+			this.Controls.Add(this.btnOk);
 			this.Controls.Add(this.dtvMetas);
 			this.Name = "frmCadastroMeta";
 			this.Text = "Cadastro de metas";
+			this.Load += new System.EventHandler(this.frmCadastroMeta_Load);
 			((System.ComponentModel.ISupportInitialize)(this.dtvMetas)).EndInit();
 			this.ResumeLayout(false);
 
@@ -116,12 +114,10 @@
 		#endregion
 
 		private System.Windows.Forms.DataGridView dtvMetas;
+		private System.Windows.Forms.Button btnOk;
 		private System.Windows.Forms.DataGridViewTextBoxColumn cAnalista;
-		private System.Windows.Forms.DataGridViewTextBoxColumn cNovos;
-		private System.Windows.Forms.DataGridViewTextBoxColumn cOutros;
-		private System.Windows.Forms.DataGridViewTextBoxColumn cFinalizados;
-		private System.Windows.Forms.DataGridViewTextBoxColumn cProdutividade;
-		private System.Windows.Forms.DataGridViewTextBoxColumn cRetornos;
+		private System.Windows.Forms.DataGridViewTextBoxColumn cMeta;
+		private System.Windows.Forms.Button button1;
 
 	}
 }

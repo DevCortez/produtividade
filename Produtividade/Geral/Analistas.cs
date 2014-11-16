@@ -76,7 +76,7 @@ namespace Produtividade.Geral
 			salvarDados();
 		}
 		
-		private IEnumerable<string> getNomes()
+		public IEnumerable<string> getNomes()
 		{
 			List<string> listaNomes = new List<string>();
 			
@@ -122,15 +122,13 @@ namespace Produtividade.Geral
 					return null;
 
 
-				foreach(XElement currentDia in dadosNode)
+				foreach(XElement currentDia in dadosNode.DescendantNodes())
 				{
 					x.nome = pessoa;
-
-				
-
-					x.novos = (Convert.ToInt32(x.novos) + Convert.ToInt32((currentDia.FirstNode as XElement).Attribute("novos").Value)).ToString();
-					x.outros = (Convert.ToInt32(x.outros) + Convert.ToInt32((currentDia.FirstNode as XElement).Attribute("outros").Value)).ToString();
-					x.finalizados = (Convert.ToInt32(x.finalizados) + Convert.ToInt32((currentDia.FirstNode as XElement).Attribute("finalizados").Value)).ToString();
+		
+					x.novos = (Convert.ToInt32(x.novos) + Convert.ToInt32((currentDia as XElement).Attribute("novos").Value)).ToString();
+					x.outros = (Convert.ToInt32(x.outros) + Convert.ToInt32((currentDia as XElement).Attribute("outros").Value)).ToString();
+					x.finalizados = (Convert.ToInt32(x.finalizados) + Convert.ToInt32((currentDia as XElement).Attribute("finalizados").Value)).ToString();
 				}
 			}
 			catch
@@ -181,6 +179,54 @@ namespace Produtividade.Geral
 			}
 
 			return listaPessoas;
+		}
+
+		public void setMeta(string nome, string meta)
+		{
+			XElement x = analista.Descendants(nome).FirstOrDefault();
+
+			if(x == null)
+				return;
+
+			XElement pMeta = x.Element("meta");
+
+			if(pMeta == null)
+				{
+					pMeta = new XElement("meta");
+					x.Add(pMeta);
+				}
+
+			pMeta.Value = meta;			
+			salvarDados();
+		}
+		
+		public int getMeta(string nome)
+		{
+			try
+			{
+				return Convert.ToInt32(analista.Descendants(nome).Elements("meta").FirstOrDefault().Value);
+			}
+			catch
+			{
+				return 0;
+			}
+		}
+
+		public int getDiasTrabalhados(string nome, DateTime data)
+		{
+			IEnumerable<XElement> mesNode = analista.Elements("root").Elements(nome).Elements("a" + data.Year.ToString()).Elements("m" + data.Month.ToString());
+
+			int total = 0;
+
+			foreach(XElement x in mesNode.DescendantNodes())
+			{
+				if(Convert.ToInt32(x.Attribute("novos").Value)>0 ||
+					Convert.ToInt32(x.Attribute("outros").Value)>0 ||
+					Convert.ToInt32(x.Attribute("finalizados").Value)>0 )
+					total++;
+			}
+
+			return total;
 		}
 	}
 

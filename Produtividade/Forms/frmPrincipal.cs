@@ -70,8 +70,21 @@ namespace Produtividade.Forms
 		}
 
 		private void enviarPorEmailToolStripMenuItem_Click(object sender, EventArgs e)
-		{
+		{			
+			pnlLoading.Left = (Width/2)-(pnlLoading.Width/2);
+			pnlLoading.Top = (Height/2)-(pnlLoading.Height/2);
+			pnlLoading.Show();
+			pnlLoading.Refresh();
+
 			Relatorio.enviarRelatorio("eduardo.sqa@alterdata.com.br", "Assunto de testes", Relatorio.gerarRelatorio(dtpDia.Value.ToShortDateString(), "eduardo.sqa", analistas));
+			
+			pnlLoading.Hide();
+		}
+
+		private void metasToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			frmCadastroMeta metas = new frmCadastroMeta();
+			metas.Show();
 		}
 	}
 }

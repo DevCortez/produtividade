@@ -40,10 +40,14 @@
 			this.configuraçõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.emailToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.relatórioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.metasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.relatórioToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
 			this.enviarPorEmailToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.pnlLoading = new System.Windows.Forms.Panel();
+			this.lblMensagem = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.dtvAtendimentos)).BeginInit();
 			this.menuStrip1.SuspendLayout();
+			this.pnlLoading.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// dtvAtendimentos
@@ -133,7 +137,8 @@
 			// 
 			this.configuraçõesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.emailToolStripMenuItem,
-            this.relatórioToolStripMenuItem});
+            this.relatórioToolStripMenuItem,
+            this.metasToolStripMenuItem});
 			this.configuraçõesToolStripMenuItem.Name = "configuraçõesToolStripMenuItem";
 			this.configuraçõesToolStripMenuItem.Size = new System.Drawing.Size(96, 20);
 			this.configuraçõesToolStripMenuItem.Text = "&Configurações";
@@ -141,7 +146,7 @@
 			// emailToolStripMenuItem
 			// 
 			this.emailToolStripMenuItem.Name = "emailToolStripMenuItem";
-			this.emailToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.emailToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
 			this.emailToolStripMenuItem.Text = "&E-mail";
 			this.emailToolStripMenuItem.Click += new System.EventHandler(this.emailToolStripMenuItem_Click);
 			// 
@@ -150,6 +155,13 @@
 			this.relatórioToolStripMenuItem.Name = "relatórioToolStripMenuItem";
 			this.relatórioToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
 			this.relatórioToolStripMenuItem.Text = "&Opções de relatório";
+			// 
+			// metasToolStripMenuItem
+			// 
+			this.metasToolStripMenuItem.Name = "metasToolStripMenuItem";
+			this.metasToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+			this.metasToolStripMenuItem.Text = "&Metas";
+			this.metasToolStripMenuItem.Click += new System.EventHandler(this.metasToolStripMenuItem_Click);
 			// 
 			// relatórioToolStripMenuItem1
 			// 
@@ -166,11 +178,31 @@
 			this.enviarPorEmailToolStripMenuItem.Text = "&Enviar por e-mail";
 			this.enviarPorEmailToolStripMenuItem.Click += new System.EventHandler(this.enviarPorEmailToolStripMenuItem_Click);
 			// 
+			// pnlLoading
+			// 
+			this.pnlLoading.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.pnlLoading.Controls.Add(this.lblMensagem);
+			this.pnlLoading.Location = new System.Drawing.Point(212, 114);
+			this.pnlLoading.Name = "pnlLoading";
+			this.pnlLoading.Size = new System.Drawing.Size(200, 100);
+			this.pnlLoading.TabIndex = 3;
+			this.pnlLoading.Visible = false;
+			// 
+			// lblMensagem
+			// 
+			this.lblMensagem.AutoSize = true;
+			this.lblMensagem.Location = new System.Drawing.Point(54, 41);
+			this.lblMensagem.Name = "lblMensagem";
+			this.lblMensagem.Size = new System.Drawing.Size(93, 13);
+			this.lblMensagem.TabIndex = 0;
+			this.lblMensagem.Text = "Enviando emails...";
+			// 
 			// frmPrincipal
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(620, 313);
+			this.Controls.Add(this.pnlLoading);
 			this.Controls.Add(this.dtpDia);
 			this.Controls.Add(this.dtvAtendimentos);
 			this.Controls.Add(this.menuStrip1);
@@ -182,6 +214,8 @@
 			((System.ComponentModel.ISupportInitialize)(this.dtvAtendimentos)).EndInit();
 			this.menuStrip1.ResumeLayout(false);
 			this.menuStrip1.PerformLayout();
+			this.pnlLoading.ResumeLayout(false);
+			this.pnlLoading.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -203,6 +237,9 @@
 		private System.Windows.Forms.ToolStripMenuItem relatórioToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem relatórioToolStripMenuItem1;
 		private System.Windows.Forms.ToolStripMenuItem enviarPorEmailToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem metasToolStripMenuItem;
+		private System.Windows.Forms.Panel pnlLoading;
+		private System.Windows.Forms.Label lblMensagem;
 	}
 }
 

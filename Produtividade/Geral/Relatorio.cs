@@ -42,6 +42,7 @@ namespace Produtividade.Geral
 			relatorio += "Finalizados de outros<br><strong>" + buffer.outros + "</strong><br>";
 			relatorio += "Finalizados<br><strong>" + buffer.finalizados + "</strong><br>";
 			relatorio += "Retornos do dia<br><strong>" + (Convert.ToInt32(buffer.novos) - Convert.ToInt32(buffer.finalizados)) + "</strong><br>";
+			relatorio += "Meta diária<br><strong>" + buffer.novos + "/" + analistas.getMeta(analista) +  " (" + (Convert.ToDouble(buffer.novos) / (double)analistas.getMeta(analista) * 100) + "%)</strong><br>";
 
 			relatorio += "<br><br><br>";
 
@@ -53,6 +54,7 @@ namespace Produtividade.Geral
 			relatorio += "Finalizados de outros<br><strong>" + buffer.outros + "</strong><br>";
 			relatorio += "Finalizados<br><strong>" + buffer.finalizados + "</strong><br>";
 			relatorio += "Retornos do mês<br><strong>" + (Convert.ToInt32(buffer.novos) - Convert.ToInt32(buffer.finalizados)) + "</strong><br>";
+			relatorio += "Meta diária<br><strong>" + buffer.novos + "/" + analistas.getMeta(analista) + " (" + (Convert.ToDouble(buffer.novos) / (double)analistas.getMeta(analista) * 100) + "%)</strong><br>";
 
 			//</span>
 			return relatorio;

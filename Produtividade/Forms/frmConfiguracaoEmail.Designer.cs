@@ -53,6 +53,7 @@
 			this.txtServidor.Name = "txtServidor";
 			this.txtServidor.Size = new System.Drawing.Size(228, 20);
 			this.txtServidor.TabIndex = 3;
+			this.txtServidor.Text = "smtp.alterdata.com.br";
 			// 
 			// lblEmail
 			// 
