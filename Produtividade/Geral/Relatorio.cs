@@ -55,7 +55,7 @@ namespace Produtividade.Geral
 			relatorio += "Finalizados de outros<br><strong>" + buffer.outros + "</strong><br>";
 			relatorio += "Finalizados<br><strong>" + buffer.finalizados + "</strong><br>";
 			relatorio += "Retornos do mês<br><strong>" + (Convert.ToInt32(buffer.novos) - Convert.ToInt32(buffer.finalizados)) + "</strong><br>";
-			relatorio += "Meta diária<br><strong>" + buffer.novos + "/" + analistas.getMeta(analista) * analistas.getDiasTrabalhados(analista, Convert.ToDateTime(data)) + " (" + (Convert.ToDouble(buffer.novos) / (double)(analistas.getMeta(analista) * analistas.getDiasTrabalhados(analista, Convert.ToDateTime(data))) * 100).ToString("0.00") + "%)</strong><br><br><br>";
+			relatorio += "Meta mensal<br><strong>" + buffer.novos + "/" + analistas.getMeta(analista) * analistas.getDiasTrabalhados(analista, Convert.ToDateTime(data)) + " (" + (Convert.ToDouble(buffer.novos) / (double)(analistas.getMeta(analista) * analistas.getDiasTrabalhados(analista, Convert.ToDateTime(data))) * 100).ToString("0.00") + "%)</strong><br><br><br>";
 
 			relatorio += "<style>table {    width:100%;}table, th, td {    border: 1px solid black;    border-collapse: collapse;}th, td {    padding: 5px;    text-align: left;}table#t01 tr:nth-child(even) {    background-color: #eee;}table#t01 tr:nth-child(odd) {   background-color:#fff;}table#t01 th	{    background-color: black;    color: white;}</style>";
 			relatorio += "<table id=\"t01\">";

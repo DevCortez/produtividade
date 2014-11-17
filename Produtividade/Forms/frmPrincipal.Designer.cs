@@ -29,12 +29,6 @@
 		private void InitializeComponent()
 		{
 			this.dtvAtendimentos = new System.Windows.Forms.DataGridView();
-			this.cAnalista = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.cNovos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.cOutros = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.cFinalizados = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.cProdutividade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.cRetornos = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.dtpDia = new System.Windows.Forms.DateTimePicker();
 			this.menuStrip1 = new System.Windows.Forms.MenuStrip();
 			this.configuraçõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -46,6 +40,13 @@
 			this.ajudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.pnlLoading = new System.Windows.Forms.Panel();
 			this.lblMensagem = new System.Windows.Forms.Label();
+			this.cId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.cAnalista = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.cNovos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.cOutros = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.cFinalizados = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.cProdutividade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.cRetornos = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			((System.ComponentModel.ISupportInitialize)(this.dtvAtendimentos)).BeginInit();
 			this.menuStrip1.SuspendLayout();
 			this.pnlLoading.SuspendLayout();
@@ -61,6 +62,7 @@
 			this.dtvAtendimentos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
 			this.dtvAtendimentos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dtvAtendimentos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.cId,
             this.cAnalista,
             this.cNovos,
             this.cOutros,
@@ -75,46 +77,6 @@
 			this.dtvAtendimentos.Size = new System.Drawing.Size(510, 242);
 			this.dtvAtendimentos.TabIndex = 0;
 			this.dtvAtendimentos.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtvAtendimentos_CellValueChanged);
-			// 
-			// cAnalista
-			// 
-			this.cAnalista.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.cAnalista.HeaderText = "Analista";
-			this.cAnalista.Name = "cAnalista";
-			// 
-			// cNovos
-			// 
-			this.cNovos.HeaderText = "Novos";
-			this.cNovos.Name = "cNovos";
-			this.cNovos.Width = 80;
-			// 
-			// cOutros
-			// 
-			this.cOutros.HeaderText = "Finalizado outros";
-			this.cOutros.Name = "cOutros";
-			this.cOutros.Width = 80;
-			// 
-			// cFinalizados
-			// 
-			this.cFinalizados.HeaderText = "Finalizados";
-			this.cFinalizados.Name = "cFinalizados";
-			this.cFinalizados.Width = 80;
-			// 
-			// cProdutividade
-			// 
-			this.cProdutividade.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.cProdutividade.HeaderText = "Produtividade";
-			this.cProdutividade.Name = "cProdutividade";
-			this.cProdutividade.ReadOnly = true;
-			this.cProdutividade.Visible = false;
-			// 
-			// cRetornos
-			// 
-			this.cRetornos.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-			this.cRetornos.HeaderText = "Retornos";
-			this.cRetornos.Name = "cRetornos";
-			this.cRetornos.ReadOnly = true;
-			this.cRetornos.Width = 80;
 			// 
 			// dtpDia
 			// 
@@ -208,6 +170,52 @@
 			this.lblMensagem.Text = "Enviando emails...";
 			this.lblMensagem.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
+			// cId
+			// 
+			this.cId.HeaderText = "cId";
+			this.cId.Name = "cId";
+			this.cId.Visible = false;
+			// 
+			// cAnalista
+			// 
+			this.cAnalista.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.cAnalista.HeaderText = "Analista";
+			this.cAnalista.Name = "cAnalista";
+			// 
+			// cNovos
+			// 
+			this.cNovos.HeaderText = "Novos";
+			this.cNovos.Name = "cNovos";
+			this.cNovos.Width = 80;
+			// 
+			// cOutros
+			// 
+			this.cOutros.HeaderText = "Finalizado outros";
+			this.cOutros.Name = "cOutros";
+			this.cOutros.Width = 80;
+			// 
+			// cFinalizados
+			// 
+			this.cFinalizados.HeaderText = "Finalizados";
+			this.cFinalizados.Name = "cFinalizados";
+			this.cFinalizados.Width = 80;
+			// 
+			// cProdutividade
+			// 
+			this.cProdutividade.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.cProdutividade.HeaderText = "Produtividade";
+			this.cProdutividade.Name = "cProdutividade";
+			this.cProdutividade.ReadOnly = true;
+			this.cProdutividade.Visible = false;
+			// 
+			// cRetornos
+			// 
+			this.cRetornos.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+			this.cRetornos.HeaderText = "Retornos";
+			this.cRetornos.Name = "cRetornos";
+			this.cRetornos.ReadOnly = true;
+			this.cRetornos.Width = 80;
+			// 
 			// frmPrincipal
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -247,13 +255,14 @@
 		private System.Windows.Forms.ToolStripMenuItem metasToolStripMenuItem;
 		private System.Windows.Forms.Panel pnlLoading;
 		private System.Windows.Forms.Label lblMensagem;
+		private System.Windows.Forms.ToolStripMenuItem ajudaToolStripMenuItem;
+		private System.Windows.Forms.DataGridViewTextBoxColumn cId;
 		private System.Windows.Forms.DataGridViewTextBoxColumn cAnalista;
 		private System.Windows.Forms.DataGridViewTextBoxColumn cNovos;
 		private System.Windows.Forms.DataGridViewTextBoxColumn cOutros;
 		private System.Windows.Forms.DataGridViewTextBoxColumn cFinalizados;
 		private System.Windows.Forms.DataGridViewTextBoxColumn cProdutividade;
 		private System.Windows.Forms.DataGridViewTextBoxColumn cRetornos;
-		private System.Windows.Forms.ToolStripMenuItem ajudaToolStripMenuItem;
 	}
 }
 

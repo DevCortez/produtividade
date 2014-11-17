@@ -35,7 +35,10 @@ namespace Produtividade.Geral
 			analistaNode = analista.Element("root").Element(nome);			
 
 			if(analistaNode == null)
-				analista.Element("root").Add(analistaNode = new XElement(nome));
+				{
+					analista.Element("root").Add(analistaNode = new XElement(nome));
+					analistaNode.SetAttributeValue("id", nome);
+				}
 						
 			DateTime dia = Convert.ToDateTime(data);
 			XElement anoNode = analistaNode.Element("a" + dia.Year.ToString());
@@ -98,6 +101,7 @@ namespace Produtividade.Geral
 					return null;
 
 				x.nome = pessoa;
+				//x.id = dadosNode.Attribute("novos").Value;
 				x.novos = dadosNode.Attribute("novos").Value;
 				x.outros = dadosNode.Attribute("outros").Value;
 				x.finalizados = dadosNode.Attribute("finalizados").Value;
@@ -288,6 +292,7 @@ namespace Produtividade.Geral
 
 	class Pessoa
 	{
+		public string id;
 		public string nome;
 		public string novos;
 		public string outros;

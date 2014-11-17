@@ -61,7 +61,7 @@ namespace Produtividade.Forms
 
 			foreach (Pessoa x in analistas.getDadosDia(dtpDia.Value.ToShortDateString()))
 			{
-				dtvAtendimentos.Rows.Add(x.nome, x.novos, x.outros, x.finalizados);
+				dtvAtendimentos.Rows.Add(x.id, x.nome, x.novos, x.outros, x.finalizados);
 			}
 
 			calcularDados();
@@ -104,7 +104,7 @@ namespace Produtividade.Forms
 					lblMensagem.Text = "Enviando e-mail para " + x + "...";
 					lblMensagem.Refresh();
 					
-					Relatorio.enviarRelatorio(  "eduardo.sqa@alterdata.com.br",//x + Configurador.getSuffix(), 
+					Relatorio.enviarRelatorio(  x + Configurador.getSuffix(), 
 												"Relatorio de produtividade - " + x, 
 												Relatorio.gerarRelatorio(dtpDia.Value.ToShortDateString(), 
 												x, 
