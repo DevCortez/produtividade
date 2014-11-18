@@ -28,153 +28,154 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.txtEmail = new System.Windows.Forms.TextBox();
-			this.txtServidor = new System.Windows.Forms.TextBox();
-			this.lblEmail = new System.Windows.Forms.Label();
-			this.lblServidor = new System.Windows.Forms.Label();
-			this.lblSenha = new System.Windows.Forms.Label();
-			this.btnOk = new System.Windows.Forms.Button();
-			this.btnCancelar = new System.Windows.Forms.Button();
-			this.lblPorta = new System.Windows.Forms.Label();
-			this.txtPorta = new System.Windows.Forms.TextBox();
-			this.txtSenha = new System.Windows.Forms.TextBox();
-			this.lblSuffix = new System.Windows.Forms.Label();
-			this.txtSuffix = new System.Windows.Forms.TextBox();
-			this.SuspendLayout();
-			// 
-			// txtEmail
-			// 
-			this.txtEmail.Location = new System.Drawing.Point(15, 25);
-			this.txtEmail.Name = "txtEmail";
-			this.txtEmail.Size = new System.Drawing.Size(229, 20);
-			this.txtEmail.TabIndex = 0;
-			// 
-			// txtServidor
-			// 
-			this.txtServidor.Location = new System.Drawing.Point(16, 104);
-			this.txtServidor.Name = "txtServidor";
-			this.txtServidor.Size = new System.Drawing.Size(228, 20);
-			this.txtServidor.TabIndex = 3;
-			this.txtServidor.Text = "smtp.alterdata.com.br";
-			// 
-			// lblEmail
-			// 
-			this.lblEmail.AutoSize = true;
-			this.lblEmail.Location = new System.Drawing.Point(12, 9);
-			this.lblEmail.Name = "lblEmail";
-			this.lblEmail.Size = new System.Drawing.Size(35, 13);
-			this.lblEmail.TabIndex = 3;
-			this.lblEmail.Text = "E-mail";
-			// 
-			// lblServidor
-			// 
-			this.lblServidor.AutoSize = true;
-			this.lblServidor.Location = new System.Drawing.Point(13, 88);
-			this.lblServidor.Name = "lblServidor";
-			this.lblServidor.Size = new System.Drawing.Size(46, 13);
-			this.lblServidor.TabIndex = 4;
-			this.lblServidor.Text = "Servidor";
-			// 
-			// lblSenha
-			// 
-			this.lblSenha.AutoSize = true;
-			this.lblSenha.Location = new System.Drawing.Point(12, 47);
-			this.lblSenha.Name = "lblSenha";
-			this.lblSenha.Size = new System.Drawing.Size(38, 13);
-			this.lblSenha.TabIndex = 5;
-			this.lblSenha.Text = "Senha";
-			// 
-			// btnOk
-			// 
-			this.btnOk.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-			this.btnOk.Location = new System.Drawing.Point(110, 178);
-			this.btnOk.Name = "btnOk";
-			this.btnOk.Size = new System.Drawing.Size(53, 23);
-			this.btnOk.TabIndex = 5;
-			this.btnOk.Text = "&OK";
-			this.btnOk.UseVisualStyleBackColor = true;
-			this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
-			// 
-			// btnCancelar
-			// 
-			this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-			this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-			this.btnCancelar.Location = new System.Drawing.Point(169, 178);
-			this.btnCancelar.Name = "btnCancelar";
-			this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-			this.btnCancelar.TabIndex = 6;
-			this.btnCancelar.Text = "&Cancelar";
-			this.btnCancelar.UseVisualStyleBackColor = true;
-			this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-			// 
-			// lblPorta
-			// 
-			this.lblPorta.AutoSize = true;
-			this.lblPorta.Location = new System.Drawing.Point(192, 48);
-			this.lblPorta.Name = "lblPorta";
-			this.lblPorta.Size = new System.Drawing.Size(32, 13);
-			this.lblPorta.TabIndex = 8;
-			this.lblPorta.Text = "Porta";
-			// 
-			// txtPorta
-			// 
-			this.txtPorta.Location = new System.Drawing.Point(195, 64);
-			this.txtPorta.Name = "txtPorta";
-			this.txtPorta.Size = new System.Drawing.Size(49, 20);
-			this.txtPorta.TabIndex = 2;
-			this.txtPorta.Text = "587";
-			// 
-			// txtSenha
-			// 
-			this.txtSenha.Location = new System.Drawing.Point(16, 64);
-			this.txtSenha.Name = "txtSenha";
-			this.txtSenha.PasswordChar = '#';
-			this.txtSenha.Size = new System.Drawing.Size(173, 20);
-			this.txtSenha.TabIndex = 1;
-			// 
-			// lblSuffix
-			// 
-			this.lblSuffix.AutoSize = true;
-			this.lblSuffix.Location = new System.Drawing.Point(13, 136);
-			this.lblSuffix.Name = "lblSuffix";
-			this.lblSuffix.Size = new System.Drawing.Size(145, 13);
-			this.lblSuffix.TabIndex = 10;
-			this.lblSuffix.Text = "Sufixo do e-mail dos analistas";
-			// 
-			// txtSuffix
-			// 
-			this.txtSuffix.Location = new System.Drawing.Point(16, 152);
-			this.txtSuffix.Name = "txtSuffix";
-			this.txtSuffix.Size = new System.Drawing.Size(228, 20);
-			this.txtSuffix.TabIndex = 4;
-			this.txtSuffix.Text = "@alterdata.com.br";
-			// 
-			// frmConfiguracaoEmail
-			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.CancelButton = this.btnCancelar;
-			this.ClientSize = new System.Drawing.Size(256, 209);
-			this.Controls.Add(this.lblSuffix);
-			this.Controls.Add(this.txtSuffix);
-			this.Controls.Add(this.txtSenha);
-			this.Controls.Add(this.txtPorta);
-			this.Controls.Add(this.lblPorta);
-			this.Controls.Add(this.btnCancelar);
-			this.Controls.Add(this.btnOk);
-			this.Controls.Add(this.lblSenha);
-			this.Controls.Add(this.lblServidor);
-			this.Controls.Add(this.lblEmail);
-			this.Controls.Add(this.txtServidor);
-			this.Controls.Add(this.txtEmail);
-			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-			this.KeyPreview = true;
-			this.Name = "frmConfiguracaoEmail";
-			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-			this.Text = "Configuração do email";
-			this.Load += new System.EventHandler(this.frmConfiguracaoEmail_Load);
-			this.ResumeLayout(false);
-			this.PerformLayout();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtServidor = new System.Windows.Forms.TextBox();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.lblServidor = new System.Windows.Forms.Label();
+            this.lblSenha = new System.Windows.Forms.Label();
+            this.btnOk = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.lblPorta = new System.Windows.Forms.Label();
+            this.txtPorta = new System.Windows.Forms.TextBox();
+            this.txtSenha = new System.Windows.Forms.TextBox();
+            this.lblSuffix = new System.Windows.Forms.Label();
+            this.txtSuffix = new System.Windows.Forms.TextBox();
+            this.SuspendLayout();
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(15, 25);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(229, 20);
+            this.txtEmail.TabIndex = 0;
+            // 
+            // txtServidor
+            // 
+            this.txtServidor.Location = new System.Drawing.Point(16, 104);
+            this.txtServidor.Name = "txtServidor";
+            this.txtServidor.Size = new System.Drawing.Size(228, 20);
+            this.txtServidor.TabIndex = 3;
+            this.txtServidor.Text = "smtp.alterdata.com.br";
+            // 
+            // lblEmail
+            // 
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Location = new System.Drawing.Point(12, 9);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(35, 13);
+            this.lblEmail.TabIndex = 3;
+            this.lblEmail.Text = "E-mail";
+            // 
+            // lblServidor
+            // 
+            this.lblServidor.AutoSize = true;
+            this.lblServidor.Location = new System.Drawing.Point(13, 88);
+            this.lblServidor.Name = "lblServidor";
+            this.lblServidor.Size = new System.Drawing.Size(46, 13);
+            this.lblServidor.TabIndex = 4;
+            this.lblServidor.Text = "Servidor";
+            // 
+            // lblSenha
+            // 
+            this.lblSenha.AutoSize = true;
+            this.lblSenha.Location = new System.Drawing.Point(12, 47);
+            this.lblSenha.Name = "lblSenha";
+            this.lblSenha.Size = new System.Drawing.Size(38, 13);
+            this.lblSenha.TabIndex = 5;
+            this.lblSenha.Text = "Senha";
+            // 
+            // btnOk
+            // 
+            this.btnOk.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnOk.Location = new System.Drawing.Point(110, 178);
+            this.btnOk.Name = "btnOk";
+            this.btnOk.Size = new System.Drawing.Size(53, 23);
+            this.btnOk.TabIndex = 5;
+            this.btnOk.Text = "&OK";
+            this.btnOk.UseVisualStyleBackColor = true;
+            this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCancelar.Location = new System.Drawing.Point(169, 178);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.TabIndex = 6;
+            this.btnCancelar.Text = "&Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // lblPorta
+            // 
+            this.lblPorta.AutoSize = true;
+            this.lblPorta.Location = new System.Drawing.Point(192, 48);
+            this.lblPorta.Name = "lblPorta";
+            this.lblPorta.Size = new System.Drawing.Size(32, 13);
+            this.lblPorta.TabIndex = 8;
+            this.lblPorta.Text = "Porta";
+            // 
+            // txtPorta
+            // 
+            this.txtPorta.Location = new System.Drawing.Point(195, 64);
+            this.txtPorta.Name = "txtPorta";
+            this.txtPorta.Size = new System.Drawing.Size(49, 20);
+            this.txtPorta.TabIndex = 2;
+            this.txtPorta.Text = "587";
+            // 
+            // txtSenha
+            // 
+            this.txtSenha.Location = new System.Drawing.Point(16, 64);
+            this.txtSenha.Name = "txtSenha";
+            this.txtSenha.PasswordChar = '#';
+            this.txtSenha.Size = new System.Drawing.Size(173, 20);
+            this.txtSenha.TabIndex = 1;
+            // 
+            // lblSuffix
+            // 
+            this.lblSuffix.AutoSize = true;
+            this.lblSuffix.Location = new System.Drawing.Point(13, 136);
+            this.lblSuffix.Name = "lblSuffix";
+            this.lblSuffix.Size = new System.Drawing.Size(145, 13);
+            this.lblSuffix.TabIndex = 10;
+            this.lblSuffix.Text = "Sufixo do e-mail dos analistas";
+            // 
+            // txtSuffix
+            // 
+            this.txtSuffix.Location = new System.Drawing.Point(16, 152);
+            this.txtSuffix.Name = "txtSuffix";
+            this.txtSuffix.Size = new System.Drawing.Size(228, 20);
+            this.txtSuffix.TabIndex = 4;
+            this.txtSuffix.Text = "@alterdata.com.br";
+            // 
+            // frmConfiguracaoEmail
+            // 
+            this.AcceptButton = this.btnOk;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnCancelar;
+            this.ClientSize = new System.Drawing.Size(256, 209);
+            this.Controls.Add(this.lblSuffix);
+            this.Controls.Add(this.txtSuffix);
+            this.Controls.Add(this.txtSenha);
+            this.Controls.Add(this.txtPorta);
+            this.Controls.Add(this.lblPorta);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnOk);
+            this.Controls.Add(this.lblSenha);
+            this.Controls.Add(this.lblServidor);
+            this.Controls.Add(this.lblEmail);
+            this.Controls.Add(this.txtServidor);
+            this.Controls.Add(this.txtEmail);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.KeyPreview = true;
+            this.Name = "frmConfiguracaoEmail";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Configuração do email";
+            this.Load += new System.EventHandler(this.frmConfiguracaoEmail_Load);
+            this.ResumeLayout(false);
+            this.PerformLayout();
 
 		}
 

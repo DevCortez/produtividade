@@ -49,5 +49,15 @@ namespace Produtividade.Forms
 			resultado = 0;
 			Close();
 		}
+
+        private void dtvAtivos_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.Handled = false;
+                e.SuppressKeyPress = true;
+                btnOk_Click(null, null);
+            }            
+        }
 	}
 }
