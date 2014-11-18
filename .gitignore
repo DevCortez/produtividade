@@ -4,3 +4,5 @@
 
 Debug
 bin
+
+/Produtividade/obj/*.gitignore
