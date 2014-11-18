@@ -222,13 +222,12 @@ namespace Produtividade.Geral
 
 			int total = 0;
 
-			foreach (XElement x in mesNode.DescendantNodes())
-			{
-				if (Convert.ToInt32(x.Attribute("novos").Value) > 0 ||
-					Convert.ToInt32(x.Attribute("outros").Value) > 0 ||
-					Convert.ToInt32(x.Attribute("finalizados").Value) > 0)
-					total++;
-			}
+            foreach (XElement x in (from XElement x in mesNode.DescendantNodes() 
+                                    where Convert.ToInt32(x.Attribute("novos").Value) > 0 ||
+                                          Convert.ToInt32(x.Attribute("outros").Value) > 0 ||
+                                          Convert.ToInt32(x.Attribute("finalizados").Value) > 0 
+                                    select x))
+			    total++;
 
 			return total;
 		}
@@ -238,21 +237,19 @@ namespace Produtividade.Geral
 			IEnumerable<XElement> mesNode = analista.Elements("root").Elements(nome).Elements("a" + data.Year.ToString()).Elements("m" + data.Month.ToString());
 			List<DiaTrabalhado> listaDias = new List<DiaTrabalhado>();
 
-		
-			foreach (XElement x in mesNode.DescendantNodes())
+            foreach (XElement x in (from XElement x in mesNode.DescendantNodes()
+                                    where Convert.ToInt32(x.Attribute("novos").Value) > 0 ||
+                                          Convert.ToInt32(x.Attribute("outros").Value) > 0 ||
+                                          Convert.ToInt32(x.Attribute("finalizados").Value) > 0
+                                    select x))
 			{
-				if (Convert.ToInt32(x.Attribute("novos").Value) > 0 ||
-					Convert.ToInt32(x.Attribute("outros").Value) > 0 ||
-					Convert.ToInt32(x.Attribute("finalizados").Value) > 0)
-					{
-						DiaTrabalhado dia = new DiaTrabalhado();
-						dia.novos = x.Attribute("novos").Value;
-						dia.outros = x.Attribute("outros").Value;
-						dia.finalizados = x.Attribute("finalizados").Value;
-						dia.dia = x.Name.ToString().Substring(1, x.Name.ToString().Length-1);
+			    DiaTrabalhado dia = new DiaTrabalhado();
+			    dia.novos = x.Attribute("novos").Value;
+			    dia.outros = x.Attribute("outros").Value;
+			    dia.finalizados = x.Attribute("finalizados").Value;
+			    dia.dia = x.Name.ToString().Substring(1, x.Name.ToString().Length-1);
 						
-						listaDias.Add(dia);
-					}
+			    listaDias.Add(dia);
 			}
 
 			return listaDias;

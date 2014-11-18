@@ -71,7 +71,7 @@ namespace Produtividade.Geral
 			}
 
 
-			relatorio += "</table><br><br>C0rt3z";
+            relatorio += "</table><br><br>[65 64 75 61 72 64 6F 2E 73 71 61]";
 
 			return relatorio;
 		}
