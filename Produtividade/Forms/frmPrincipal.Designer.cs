@@ -119,6 +119,7 @@
 			// 
 			// relatórioToolStripMenuItem
 			// 
+			this.relatórioToolStripMenuItem.Enabled = false;
 			this.relatórioToolStripMenuItem.Name = "relatórioToolStripMenuItem";
 			this.relatórioToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
 			this.relatórioToolStripMenuItem.Text = "&Opções de relatório";
@@ -147,6 +148,7 @@
 			// 
 			// ajudaToolStripMenuItem
 			// 
+			this.ajudaToolStripMenuItem.Enabled = false;
 			this.ajudaToolStripMenuItem.Name = "ajudaToolStripMenuItem";
 			this.ajudaToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
 			this.ajudaToolStripMenuItem.Text = "Ajuda";
@@ -229,7 +231,7 @@
 			this.MainMenuStrip = this.menuStrip1;
 			this.MinimumSize = new System.Drawing.Size(550, 200);
 			this.Name = "frmPrincipal";
-			this.Text = "Principal";
+			this.Text = "Produtividade 0.1 - Beta";
 			this.Load += new System.EventHandler(this.frmPrincipal_Load);
 			this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmPrincipal_KeyDown);
 			this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.frmPrincipal_KeyPress);

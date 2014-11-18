@@ -170,6 +170,7 @@
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
 			this.KeyPreview = true;
 			this.Name = "frmConfiguracaoEmail";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 			this.Text = "Configuração do email";
 			this.Load += new System.EventHandler(this.frmConfiguracaoEmail_Load);
 			this.ResumeLayout(false);

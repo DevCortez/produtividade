@@ -105,6 +105,7 @@
 			this.Controls.Add(this.btnOk);
 			this.Controls.Add(this.dtvMetas);
 			this.Name = "frmCadastroMeta";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 			this.Text = "Cadastro de metas";
 			this.Load += new System.EventHandler(this.frmCadastroMeta_Load);
 			((System.ComponentModel.ISupportInitialize)(this.dtvMetas)).EndInit();

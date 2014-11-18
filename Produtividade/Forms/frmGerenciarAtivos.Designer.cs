@@ -110,6 +110,7 @@
 			this.Controls.Add(this.dtvAtivos);
 			this.KeyPreview = true;
 			this.Name = "frmGerenciarAtivos";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 			this.Text = "frmGerenciarAtivos";
 			this.Load += new System.EventHandler(this.frmGerenciarAtivos_Load);
 			((System.ComponentModel.ISupportInitialize)(this.dtvAtivos)).EndInit();
