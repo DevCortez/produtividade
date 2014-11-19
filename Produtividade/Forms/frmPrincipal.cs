@@ -28,7 +28,10 @@ namespace Produtividade.Forms
 				try
 				{
 					x.Cells["cProdutividade"].Value = Convert.ToInt32(x.Cells["cFinalizados"].Value.ToString()) + Convert.ToInt32(x.Cells["cOutros"].Value.ToString());
-					x.Cells["cRetornos"].Value = Convert.ToInt32(x.Cells["cNovos"].Value.ToString()) - Convert.ToInt32(x.Cells["cFinalizados"].Value.ToString());
+					if(Convert.ToDouble(x.Cells["cFinalizados"].Value) / Convert.ToDouble(x.Cells["cNovos"].Value)>0)
+						x.Cells["cSolucao"].Value = (Convert.ToDouble(x.Cells["cFinalizados"].Value) / Convert.ToDouble(x.Cells["cNovos"].Value) * 100).ToString("0.00") + " %";
+					else
+						x.Cells["cSolucao"].Value = "0 %";
 				} catch {}
 			}				
 		}

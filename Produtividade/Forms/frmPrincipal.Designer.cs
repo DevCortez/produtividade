@@ -46,7 +46,7 @@
 			this.cOutros = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.cFinalizados = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.cProdutividade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.cRetornos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.cSolucao = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			((System.ComponentModel.ISupportInitialize)(this.dtvAtendimentos)).BeginInit();
 			this.menuStrip1.SuspendLayout();
 			this.pnlLoading.SuspendLayout();
@@ -68,7 +68,7 @@
             this.cOutros,
             this.cFinalizados,
             this.cProdutividade,
-            this.cRetornos});
+            this.cSolucao});
 			this.dtvAtendimentos.GridColor = System.Drawing.SystemColors.ControlDarkDark;
 			this.dtvAtendimentos.Location = new System.Drawing.Point(12, 59);
 			this.dtvAtendimentos.Name = "dtvAtendimentos";
@@ -210,13 +210,13 @@
 			this.cProdutividade.ReadOnly = true;
 			this.cProdutividade.Visible = false;
 			// 
-			// cRetornos
+			// cSolucao
 			// 
-			this.cRetornos.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-			this.cRetornos.HeaderText = "Retornos";
-			this.cRetornos.Name = "cRetornos";
-			this.cRetornos.ReadOnly = true;
-			this.cRetornos.Width = 80;
+			this.cSolucao.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+			this.cSolucao.HeaderText = "Indice de solução";
+			this.cSolucao.Name = "cSolucao";
+			this.cSolucao.ReadOnly = true;
+			this.cSolucao.Width = 80;
 			// 
 			// frmPrincipal
 			// 
@@ -264,7 +264,7 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn cOutros;
 		private System.Windows.Forms.DataGridViewTextBoxColumn cFinalizados;
 		private System.Windows.Forms.DataGridViewTextBoxColumn cProdutividade;
-		private System.Windows.Forms.DataGridViewTextBoxColumn cRetornos;
+		private System.Windows.Forms.DataGridViewTextBoxColumn cSolucao;
 	}
 }
 
